@@ -1,2 +1,6 @@
 .vs
 .exe
+.sln
+.vcxproj
+.vcxproj.filters
+.vcxproj.user
