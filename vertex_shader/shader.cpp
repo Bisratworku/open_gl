@@ -92,7 +92,11 @@ int main() {
 	unsigned int VBO, VAO;
 	glGenBuffers(1, &VBO);
 	glGenVertexArrays(1, &VAO);
+	
+	
 	glBindVertexArray(VAO);
+	
+	
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes), vertexes, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -114,8 +118,7 @@ int main() {
 		glfwSwapBuffers(window);
 	
 	}
-
-
+	
 
 	glfwTerminate();
 	return 0;
