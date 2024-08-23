@@ -91,7 +91,7 @@ int main() {
 	};
 	unsigned int VBO, VAO;
 	glGenBuffers(1, &VBO);
-	glGenVertexArrays(1, &VAO);
+	glGenVertexArrays( &VAO);
 	
 	
 	glBindVertexArray(VAO);

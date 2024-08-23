@@ -17,12 +17,9 @@ void User_Input(GLFWwindow* window) {
 
 
 const char* vertex = "#version  330  core \n"
-"out vec3 tri2; \n"
 "layout  (location = 0) in vec3 apos;\n"
-"layout  (location = 0) in vec3 bpos;\n"
 "void main() {\n"
 "    gl_Position = vec4(apos.x, apos.y, apos.z, 1.0);\n"
-"	 tri2 = vec4(bpos.x,bpos.y, bpos.z, 1.0);\n"
 "}\0";
 
 
@@ -89,34 +86,29 @@ int main() {
 	glDeleteShader(fragmentShader);
 
 	float TriangleOne[] = {
-		0.0f, 0.5f, 0.0f,
-		0.5f,-0.5f, 0.0f,
-	   -0.5f,-0.5f, 0.0f
-	};
-	float TriangleTwo[] = {
-		0.0f, 0.8f, 0.0f,
-		0.8f,-0.8f,  0.0f,
-	   -0.8f,-0.8f, 0.0f 
-	};
+		-0.9f, -0.5f, 0.0f,  // left 
+		-0.0f, -0.5f, 0.0f,  // right
+		-0.45f, 0.5f, 0.0f,  // top 
+		// second triangle
+		 0.0f, -0.5f, 0.0f,  // left
+		 0.9f, -0.5f, 0.0f,  // right
+		 0.45f, 0.5f, 0.0f,
 
-	unsigned int VBO1, VBO2, VAO;
+		 0.0f, -0.5f, 0.0f,
+		 -0.0f, -0.0f, 0.0f,
+		 -0.5f, 0.0f, 0.0f 
+	};
+	
+	unsigned int VBO, VAO;
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 	/*----------------------------------------------------*/
-	glGenBuffers(1, &VBO1);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO1);
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(TriangleOne), TriangleOne, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	/*------------------------------------------------------*/
-	glGenBuffers(1, &VBO2);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO2);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(TriangleTwo), TriangleTwo, GL_STATIC_DRAW);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-	glEnableVertexAttribArray(1);
-	/*-----------------------------------------------------*/
-
-
 		
 	while (!glfwWindowShouldClose(window)) {
 		User_Input(window);
@@ -126,7 +118,8 @@ int main() {
 
 		glBindVertexArray(VAO);
 		glUseProgram(ShaderProgram);
-		glDrawArrays(GL_TRIANGLES_ADJACENCY, 0, 3);
+		
+		glDrawArrays(GL_TRIANGLES,0, 9);
 
 		glfwPollEvents();
 		glfwSwapBuffers(window);
