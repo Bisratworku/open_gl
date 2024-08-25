@@ -17,6 +17,21 @@ void UserInput(GLFWwindow* window) {
 	}
 }
 
+
+const char* vertex = "#version   330   core \n"
+"layout(location = 0) in  vec3 apos;\n"
+"void main(){\n"
+"   gl_Position =  vec4(apos, 1.0);\n"
+"}\n\0";
+
+const char* fragment = "#version    330  core \n"
+"out vec4 fragColor;\n"
+"uniform vec4 color;\n"
+"void main(){\n"
+"    fragColor = color;\n"
+"}\n\0";
+
+
 int main() {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -34,10 +49,7 @@ int main() {
 		return -1;
 	}
 
-	float time = glfwGetTime();
-	std::cout << "The Time is "<< time;
 	
-		
 	/*	while (!glfwWindowShouldClose(window)) {
 		UserInput(window);
 
