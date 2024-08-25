@@ -101,7 +101,7 @@ int main() {
 		float Red = (sin(time) / 2.0f) +0.5f;
 		unsigned int addAttr = glGetUniformLocation(shaderProgram, "color");
 		glUseProgram(shaderProgram);
-		glUniform4f(addAttr, Red, 0.5f, 1.0f, 1.0f);
+		glUniform4f(addAttr, Red, 0.0f, 1.0f, 1.0f);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glfwPollEvents();
