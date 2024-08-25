@@ -61,8 +61,9 @@ public:
 		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
 		if (!success) {
 			glGetShaderInfoLog(fragmentShader, 600, NULL, InfoLog);
-			std::cout << "Can't Compile Fragment Shader \n" << InfoLog;
+			std::cout << "Can't Compile Fragment Shader ++\n" << InfoLog;
 		}
+
 		ID = glCreateProgram();
 		glAttachShader(ID, vertexShader);
 		glAttachShader(ID, fragmentShader);

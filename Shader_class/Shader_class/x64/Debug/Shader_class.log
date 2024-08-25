@@ -1,0 +1,3 @@
+﻿  tirangle_file.cpp
+C:\Users\bisra\OneDrive\Documents\GitHub\open_gl\Shader_class\SHADER_H.h(89,55): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Shader_class.vcxproj -> C:\Users\bisra\OneDrive\Documents\GitHub\open_gl\Shader_class\x64\Debug\Shader_class.exe
