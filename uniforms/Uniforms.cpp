@@ -49,6 +49,16 @@ int main() {
 		return -1;
 	}
 
+	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShader, 1, &vertex, NULL);
+	glCompileShader(vertexShader);
+	int success;
+	char InfoLog[600];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+	if (!success) {
+		glGetShaderInfoLog(vertexShader, 600, NULL, InfoLog);
+		std::cout << "Failed To Compile the Vertex Shader\n" << InfoLog;
+	}
 	
 	/*	while (!glfwWindowShouldClose(window)) {
 		UserInput(window);
