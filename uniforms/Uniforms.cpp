@@ -60,6 +60,20 @@ int main() {
 		std::cout << "Failed To Compile the Vertex Shader\n" << InfoLog;
 	}
 	
+	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &fragment, NULL);
+	glCompileShader(fragmentShader);
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+	if (!success) {
+		glGetShaderInfoLog(fragmentShader, 600, NULL, InfoLog);
+		std::cout << "Failed To Compile The Fragement Shader\n" << InfoLog;
+	}
+
+	unsigned int shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+
 	/*	while (!glfwWindowShouldClose(window)) {
 		UserInput(window);
 
