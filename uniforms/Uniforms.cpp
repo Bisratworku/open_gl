@@ -12,7 +12,7 @@ void resize(GLFWwindow* window, int width, int height) {
 
 
 void UserInput(GLFWwindow* window) {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == true) {
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == 1) {
 		glfwSetWindowShouldClose(window, true);
 	}
 }
@@ -74,18 +74,42 @@ int main() {
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
-	/*	while (!glfwWindowShouldClose(window)) {
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+	float vertexes[] = {
+		-0.5f, -0.5f, 0.0f,
+		 0.5f, -0.5f, 0.0f,
+		 0.0f,  0.5f, 0.0f
+	};
+	unsigned int VAO, VBO;
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes),vertexes, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	while (!glfwWindowShouldClose(window)) {
 		UserInput(window);
 
-		glClearColor(0.6, 0.4, 0.3, 1.0);
+		glClearColor(0.6f, 0.4f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		
+		float time = glfwGetTime();
+		float Red = (sin(time) / 2.0f) +0.5f;
+		unsigned int addAttr = glGetUniformLocation(shaderProgram, "color");
+		glUseProgram(shaderProgram);
+		glUniform4f(addAttr, Red, 0.5f, 1.0f, 1.0f);
+		glBindVertexArray(VAO);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 		glfwPollEvents();
 		glfwSwapBuffers(window);
 	}
-*/
-
+	glDeleteBuffers(1,&VBO);
+	glDeleteVertexArrays(1,&VAO);
+	glDeleteProgram(shaderProgram);
 
 
 
