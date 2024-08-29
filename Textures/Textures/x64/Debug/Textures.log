@@ -1,0 +1,24 @@
+﻿  texture.cpp
+C:\Users\bisra\OneDrive\Documents\GitHub\open_gl\libraries\include\SHADER_H.h(89,55): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+glfw3.lib(init.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(context.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_thread.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(platform.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(null_init.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_module.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(osmesa_context.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(null_monitor.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(null_window.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+glfw3.lib(null_joystick.obj) : warning LNK4204: '' is missing debugging information for referencing module; linking object as if no debug info
+  Textures.vcxproj -> C:\Users\bisra\OneDrive\Documents\GitHub\open_gl\Textures\x64\Debug\Textures.exe
